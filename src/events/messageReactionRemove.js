@@ -13,7 +13,7 @@ exports.run = async (reaction, user) => {
         let reactionInstance = (reaction.partial) ? await reaction.fetch() : reaction
 
         if (await userHasRoleForGuild(reactionInstance.message.author, enums.roles.historyEnabled, reactionInstance.message.guild)) {
-            await reactionInstance.message.author.send(newReactionHistoryEmbed(reactionInstance, user, true))
+            await reactionInstance.message.author.send(newReactionHistoryEmbed(reactionInstance, user))
         }
 
     } catch (err) {
