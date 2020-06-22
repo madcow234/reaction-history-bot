@@ -1,0 +1,36 @@
+{
+  "name": "reaction-history-bot",
+  "version": "0.0.1",
+  "description": "Discord bot that notifies a user, via DM, when their message receives/loses a reaction.",
+  "author": "MadCow234",
+  "license": "ISC",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "del-cli build && babel src -d build && del-cli src",
+    "start": "node build/index.js",
+    "dev-clean": "del-cli build && del-cli logs",
+    "dev-build": "del-cli build && babel src -d build",
+    "dev-start": "npm run dev-build && nodemon -r dotenv/config build/index.js"
+  },
+  "keywords": [
+    "Discord",
+    "bot",
+    "reactions",
+    "notifications"
+  ],
+  "dependencies": {
+    "del-cli": "^3.0.1",
+    "discord.js": "^12.2.0",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.4"
+  },
+  "engines": {
+    "node": "14.4"
+  }
+}
