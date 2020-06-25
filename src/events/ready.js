@@ -18,7 +18,7 @@ exports.run = async () => {
         for (let guild of mainContext.client.guilds.cache.array()) {
             await setupRolesForGuild(guild)
         }
-        log.info(`Successfully prepared the following roles for all guilds: ${enums.roles}.`)
+        log.info(`Successfully prepared the following roles for all guilds: ${Object.values(enums.roles)}.`)
 
         let numChannels = mainContext.client.channels.cache.size
         let numGuilds = mainContext.client.guilds.cache.size
